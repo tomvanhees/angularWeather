@@ -19,7 +19,6 @@ export class Weather implements Deserializable {
   constructor() {
   }
 
-
   get Name(): string {
     if (this.name) {
       return this.name;

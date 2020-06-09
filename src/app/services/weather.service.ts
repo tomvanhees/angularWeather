@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Weather} from "../weather";
-import {WEATHERSTUB} from "../stub/weatherstub";
-import {ApiServiceService} from "../../apiService.service";
+import {Weather} from "../weather/weather";
+import {ApiServiceService} from "./apiService.service";
 
 @Injectable({
   providedIn: 'root'

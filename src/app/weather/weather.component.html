@@ -2,29 +2,40 @@
   <div class="card my-3">
     <div class="card-body">
       <div class="form-group row">
-        <div class="col-8">
-          <select #citySelect name="" id="" class="form-control" (change)="updateCity(citySelect.value)" >
-            <option value="2796491">Hasselt</option>
-            <option value="1850147">Tokyo</option>
-            <option value="2968815">Paris</option>
-          </select>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Zoek uw stad</span>
+            </div>
+            <input #citySearchBar type="text" class="form-control" (keyup)="updateCityList(citySearchBar.value)">
+          </div>
+          <div class="position-relative">
+            <ul class="position-absolute list-group">
+              <li *ngFor="let city of this.getCityList()" (click)="updateWeather(city.id)" class="list-group-item">{{city.name}}</li>
+            </ul>
+          </div>
+
+
+<!--          <select #citySelect name="" id="" class="form-control" (change)="updateCity(citySelect.value)">-->
+<!--            <option value="{{city.id}}" *ngFor="let city of cities">{{city.name}}</option>-->
+<!--          </select>-->
         </div>
-      <div class="col-4">
-        <button class="btn btn-primary" (click)="updateWeather()">Selecteer</button>
-      </div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <div>Stad:  {{ this.weatherService.weather.Name}}</div>
+              <div>Temperatuur: {{ this.weatherService.weather.Temperature}}</div>
+              <div>Min temperatuur: {{ this.weatherService.weather.MinTemperature}}</div>
+              <div>zonsopgang: {{ this.weatherService.weather.Sunrise}}</div>
+              <div>zonsondergang: {{ this.weatherService.weather.Sunset}}</div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
     </div>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <div>Stad:  {{ this.weatherService.weather.Name}}</div>
-      <div>Temperatuur: {{ this.weatherService.weather.Temperature}}</div>
-      <div>Min temperatuur: {{ this.weatherService.weather.MinTemperature}}</div>
-      <div>zonsopgang: {{ this.weatherService.weather.Sunrise}}</div>
-      <div>zonsondergang: {{ this.weatherService.weather.Sunset}}</div>
-    </div>
-  </div>
+
 </div>
 
