@@ -28,17 +28,17 @@ export class Weather implements Deserializable {
 
   get Temperature(): number {
     if (this.main.temp) {
-      return Weather.covertKelvinToCelcius(this.main.temp);
+      return Weather.convertKelvinToCelcius(this.main.temp);
     }
     return 0
   }
 
   get MinTemperature(): number {
-    return Weather.covertKelvinToCelcius(this.main.temp_min);
+    return Weather.convertKelvinToCelcius(this.main.temp_min);
   }
 
   get MaxTemperature(): number {
-    return Weather.covertKelvinToCelcius(this.main.temp_max);
+    return Weather.convertKelvinToCelcius(this.main.temp_max);
   }
 
   get Humidity(): number {
@@ -56,7 +56,7 @@ export class Weather implements Deserializable {
     return Weather.formatToDisplayHours(date);
   }
 
-  private static covertKelvinToCelcius(temperature: number): number {
+  private static convertKelvinToCelcius(temperature: number): number {
     return Math.round((temperature - 273.15) * 10) / 10;
   }
 
