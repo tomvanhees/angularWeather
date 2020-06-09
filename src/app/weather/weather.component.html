@@ -1,5 +1,6 @@
 <div>
   <div class="card my-3">
+
     <div class="card-body">
       <div class="form-group row">
         <div class="col-6">
@@ -14,20 +15,17 @@
               <li *ngFor="let city of this.getCityList()" (click)="updateWeather(city.id)" class="list-group-item">{{city.name}}</li>
             </ul>
           </div>
-
-
-<!--          <select #citySelect name="" id="" class="form-control" (change)="updateCity(citySelect.value)">-->
-<!--            <option value="{{city.id}}" *ngFor="let city of cities">{{city.name}}</option>-->
-<!--          </select>-->
         </div>
         <div class="col-6">
           <div class="card">
+            <div class="card-header bg-light">
+              <span>{{ this.weatherService.weather.Name}}</span>
+            </div>
             <div class="card-body">
-              <div>Stad:  {{ this.weatherService.weather.Name}}</div>
               <div>Temperatuur: {{ this.weatherService.weather.Temperature}}</div>
               <div>Min temperatuur: {{ this.weatherService.weather.MinTemperature}}</div>
-              <div>zonsopgang: {{ this.weatherService.weather.Sunrise}}</div>
-              <div>zonsondergang: {{ this.weatherService.weather.Sunset}}</div>
+              <div>Zonsopgang: {{ this.weatherService.weather.Sunrise}}</div>
+              <div>Zonsondergang: {{ this.weatherService.weather.Sunset}}</div>
             </div>
           </div>
         </div>
