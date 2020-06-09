@@ -1,0 +1,30 @@
+<div>
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="form-group row">
+        <div class="col-8">
+          <select #citySelect name="" id="" class="form-control" (change)="updateCity(citySelect.value)" >
+            <option value="2796491">Hasselt</option>
+            <option value="1850147">Tokyo</option>
+            <option value="2968815">Paris</option>
+          </select>
+        </div>
+      <div class="col-4">
+        <button class="btn btn-primary" (click)="updateWeather()">Selecteer</button>
+      </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div>Stad:  {{ this.weatherService.weather.Name}}</div>
+      <div>Temperatuur: {{ this.weatherService.weather.Temperature}}</div>
+      <div>Min temperatuur: {{ this.weatherService.weather.MinTemperature}}</div>
+      <div>zonsopgang: {{ this.weatherService.weather.Sunrise}}</div>
+      <div>zonsondergang: {{ this.weatherService.weather.Sunset}}</div>
+    </div>
+  </div>
+</div>
+
